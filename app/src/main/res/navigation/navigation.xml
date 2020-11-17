@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <popup
+        android:id="@+id/progressDialog"
+        android:name="com.ediperturk.customer.ui.dialog.progress.ProgressDialog"
+        android:label="ProgressDialog"
+        tools:layout="@layout/progress_dialog">
+
+        <argument
+            android:name="cancellable"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </popup>
+
+    <popup
+        android:id="@+id/alertDialog"
+        android:name="com.ediperturk.customer.ui.dialog.alert.AlertDialog"
+        android:label="AlertDialog"
+        tools:layout="@layout/alert_dialog">
+
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="message"
+            app:argType="string"
+            app:nullable="false" />
+
+        <argument
+            android:name="cancellable"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="outsideTouch"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </popup>
+
+    <action
+        android:id="@+id/progress"
+        app:destination="@id/progressDialog"
+        app:popUpTo="@navigation/navigation"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/alert"
+        app:destination="@id/alertDialog"
+        app:popUpTo="@navigation/navigation"
+        app:popUpToInclusive="true" />
+
+    <screen
+        android:id="@+id/mainFragment"
+        android:name="com.ediperturk.customer.ui.main.MainFragment"
+        android:label="@string/text_home_page"
+        tools:layout="@layout/main_fragment">
+
+        <action
+            android:id="@+id/to_postListFragment"
+            app:destination="@id/postListFragment" />
+
+        <action
+            android:id="@+id/to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
+    </screen>
+
+    <screen
+        android:id="@+id/postDetailFragment"
+        android:name="com.ediperturk.customer.ui.postdetail.PostDetailFragment"
+        android:label="@string/text_post_detail_page"
+        tools:layout="@layout/post_detail_fragment">
+
+        <argument
+            android:name="postId"
+            app:argType="integer"
+            app:nullable="false" />
+    </screen>
+
+    <screen
+        android:id="@+id/postListFragment"
+        android:name="com.ediperturk.customer.ui.postlist.PostListFragment"
+        android:label="@string/text_posts_page"
+        tools:layout="@layout/post_list_fragment">
+
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            app:nullable="false" />
+
+        <action
+            android:id="@+id/to_postDetailFragment"
+            app:destination="@id/postDetailFragment" />
+    </screen>
+
+    <screen
+        android:id="@+id/userDetailFragment"
+        android:name="com.ediperturk.customer.ui.userdetail.UserDetailFragment"
+        android:label="@string/text_user_detail_page"
+        tools:layout="@layout/user_detail_fragment">
+
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            app:nullable="false" />
+    </screen>
+</navigation>

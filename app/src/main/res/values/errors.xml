@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_suggest_for_network_access">Lütfen internet bağlantınızı kontrol ediniz!</string>
+    <string name="error_no_connection">İnternet bağlantınız yok.</string>
+    <string name="error_api_default_exception_title">Hata</string>
+    <string name="error_api_default_exception_text">İşleminiz gerçekleştirilemiyor.</string>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="FontStyle" parent="TextAppearance.AppCompat" />
+
+    <style name="FontStyle.Bold">
+        <item name="fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="FontStyle.Bold.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="FontStyle.Semibold">
+        <item name="fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="FontStyle.Semibold.12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="FontStyle.Semibold.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="FontStyle.Medium">
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="FontStyle.Medium.12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="FontStyle.Medium.10">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="FontStyle.Medium.8">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="FontStyle.Medium.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="FontStyle.Light">
+        <item name="fontFamily">@font/poppins_light</item>
+    </style>
+
+    <style name="FontStyle.Light.10">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="FontStyle.Light.12">
+        <item name="android:textSize">12sp</item>
+    </style>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_title_margin">50dp</dimen>
+    <dimen name="app_back_button_margin">10dp</dimen>
+
+    <dimen name="dialog_card_default_padding">50dp</dimen>
+    <dimen name="alert_dialog_content_padding">10dp</dimen>
+    <dimen name="alert_dialog_content_padding_top">30dp</dimen>
+    <dimen name="alert_dialog_button_top_margin">15dp</dimen>
+</resources>

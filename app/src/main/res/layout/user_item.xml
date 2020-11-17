@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.ediperturk.customer.api.data.entity.User" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="4dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/initialsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/oval_avatar_background"
+                android:gravity="center"
+                android:text="@{user.initials}"
+                android:textAppearance="@style/FontStyle.Bold"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="EE" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fullNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="@{user.name}"
+                android:textAppearance="@style/FontStyle.Semibold"
+                app:layout_constraintBottom_toBottomOf="@id/initialsTextView"
+                app:layout_constraintLeft_toRightOf="@id/initialsTextView"
+                app:layout_constraintTop_toTopOf="@id/initialsTextView"
+                tools:text="Name Surname" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:text="@{`@` + user.username}"
+                android:textAppearance="@style/FontStyle.Medium.12"
+                app:layout_constraintBottom_toBottomOf="@id/fullNameTextView"
+                app:layout_constraintLeft_toRightOf="@id/fullNameTextView"
+                tools:text="username" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/emailTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{@string/text_user_email(user.email)}"
+                android:textAppearance="@style/FontStyle.Medium.12"
+                app:layout_constraintLeft_toLeftOf="@id/initialsTextView"
+                app:layout_constraintTop_toBottomOf="@id/initialsTextView"
+                tools:text="Email: user@mail.com" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/phoneTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/text_user_phone(user.phone)}"
+                android:textAppearance="@style/FontStyle.Medium.12"
+                app:layout_constraintLeft_toLeftOf="@id/initialsTextView"
+                app:layout_constraintTop_toBottomOf="@id/emailTextView"
+                tools:text="0555 444 33 22" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

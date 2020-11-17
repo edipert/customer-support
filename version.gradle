@@ -1,0 +1,7 @@
+ext.kotlin_version = "1.4.10"
+ext.hilt_version = '2.28-alpha'
+ext.nav_version = "2.3.1"
+ext.retrofit_version = '2.9.0'
+ext.okhttp_version = '4.8.1'
+ext.room_version = "2.2.5"
+ext.paging_version = "2.1.2"

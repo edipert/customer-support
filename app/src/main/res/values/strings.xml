@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">customer-support</string>
+    <string name="text_ok">OK</string>
+
+    <string name="text_user_email">Email: %s</string>
+    <string name="text_user_phone">Phone: %s</string>
+    <string name="text_user_address">Address: %s</string>
+    <string name="text_user_company">Company: %s</string>
+    <string name="text_comment_count">%s Comments</string>
+    <string name="text_username">\@%s</string>
+    <string name="text_home_page">Home</string>
+    <string name="text_posts_page">User Posts</string>
+    <string name="text_post_detail_page">Post</string>
+    <string name="text_user_detail_page">User</string>
+    <string name="text_see_comments">See Comments…</string>
+    <string name="text_hide_comments">Hide Comments…</string>
+    <string name="text_see_more">See more…</string>
+</resources>

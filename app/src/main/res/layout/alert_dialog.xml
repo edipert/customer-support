@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/dialog_card_default_padding" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/dialog_card_default_padding" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/guidelineStart"
+        app:layout_constraintRight_toLeftOf="@id/guidelineEnd"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/alert_dialog_content_padding"
+            android:paddingLeft="@dimen/alert_dialog_content_padding"
+            android:paddingTop="@dimen/alert_dialog_content_padding_top"
+            android:paddingEnd="@dimen/alert_dialog_content_padding"
+            android:paddingRight="@dimen/alert_dialog_content_padding"
+            android:paddingBottom="@dimen/alert_dialog_content_padding_top">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/alertDialogTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textAppearance="@style/FontStyle.Bold.16"
+                app:layout_constraintBottom_toTopOf="@id/alertDialogMessage"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="@tools:sample/lorem[5]" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/alertDialogMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textAppearance="@style/FontStyle.Medium"
+                app:layout_constraintBottom_toTopOf="@id/alertDialogOkButton"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/alertDialogTitle"
+                tools:text="@tools:sample/lorem[15]" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/alertDialogOkButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/alert_dialog_button_top_margin"
+                android:background="@drawable/radius_button_background"
+                android:text="@string/text_ok"
+                android:textAppearance="@style/FontStyle.Medium"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/alertDialogMessage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
