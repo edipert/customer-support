@@ -13,13 +13,13 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="4dp"
+        app:cardCornerRadius="@dimen/default_radius"
         app:cardUseCompatPadding="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp">
+            android:padding="@dimen/default_padding">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/initialsTextView"
@@ -38,8 +38,8 @@
                 android:id="@+id/fullNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginStart="@dimen/default_padding"
+                android:layout_marginLeft="@dimen/default_padding"
                 android:text="@{user.name}"
                 android:textAppearance="@style/FontStyle.Semibold"
                 app:layout_constraintBottom_toBottomOf="@id/initialsTextView"
@@ -51,8 +51,8 @@
                 android:id="@+id/userNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
+                android:layout_marginStart="@dimen/default_secondary_padding"
+                android:layout_marginLeft="@dimen/default_secondary_padding"
                 android:text="@{`@` + user.username}"
                 android:textAppearance="@style/FontStyle.Medium.12"
                 app:layout_constraintBottom_toBottomOf="@id/fullNameTextView"
@@ -63,7 +63,7 @@
                 android:id="@+id/emailTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/default_margin_top"
                 android:text="@{@string/text_user_email(user.email)}"
                 android:textAppearance="@style/FontStyle.Medium.12"
                 app:layout_constraintLeft_toLeftOf="@id/initialsTextView"

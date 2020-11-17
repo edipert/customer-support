@@ -22,8 +22,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="8dp"
+        app:cardCornerRadius="@dimen/alert_dialog_radius"
+        app:cardElevation="@dimen/default_elevation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/guidelineStart"
         app:layout_constraintRight_toLeftOf="@id/guidelineEnd"

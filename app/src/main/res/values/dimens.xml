@@ -7,4 +7,11 @@
     <dimen name="alert_dialog_content_padding">10dp</dimen>
     <dimen name="alert_dialog_content_padding_top">30dp</dimen>
     <dimen name="alert_dialog_button_top_margin">15dp</dimen>
+    <dimen name="alert_dialog_radius">10dp</dimen>
+    <dimen name="default_elevation">8dp</dimen>
+    <dimen name="default_padding">8dp</dimen>
+    <dimen name="default_margin_top">12dp</dimen>
+    <dimen name="default_secondary_padding">4dp</dimen>
+    <dimen name="default_radius">4dp</dimen>
+    <dimen name="user_detail_margin_right">16dp</dimen>
 </resources>
