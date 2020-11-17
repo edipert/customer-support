@@ -87,6 +87,7 @@ class PostDetailViewModelUniTest {
             "Exception should be null!"
         )
 
+        // Mock user service getComments request with local json data
         userService.stub {
             onBlocking { getPostComments(1) } doReturn Response.success(
                 Json.decodeFromString<List<Comment>>(
@@ -95,8 +96,10 @@ class PostDetailViewModelUniTest {
             )
         }
 
+        // Fetch post' comment list from remote data source by post id
         val flow = repository.getComments(1)
 
+        // Collect response
         flow.collect { result ->
             when (result) {
                 is Result.Success -> commentList.addAll(result.data)
@@ -138,6 +141,7 @@ class PostDetailViewModelUniTest {
             "Exception should be null!"
         )
 
+        // Mock user service getComments request with ApiException
         userService.stub {
             onBlocking { getPostComments(1) } doAnswer {
                 throw ApiException(
@@ -147,8 +151,10 @@ class PostDetailViewModelUniTest {
             }
         }
 
+        // Fetch post' comment list from remote data source by post id
         val flow = repository.getComments(1)
 
+        // Collect response
         flow.collect { result ->
             when (result) {
                 is Result.Success -> commentList.addAll(result.data)

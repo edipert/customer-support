@@ -87,6 +87,7 @@ class PostListViewModelUniTest {
             "Exception should be null!"
         )
 
+        // Mock user service getPosts request with local json data
         userService.stub {
             onBlocking { getUserPosts(1) } doReturn Response.success(
                 Json.decodeFromString<List<Post>>(
@@ -95,8 +96,10 @@ class PostListViewModelUniTest {
             )
         }
 
+        // Fetch user's post list from remote data source by user id
         val flow = repository.getPosts(1)
 
+        // Collect response
         flow.collect { result ->
             when (result) {
                 is Result.Success -> postList.addAll(result.data)
@@ -138,6 +141,7 @@ class PostListViewModelUniTest {
             "Exception should be null!"
         )
 
+        // Mock user service getPosts request with ApiException
         userService.stub {
             onBlocking { getUserPosts(1) } doAnswer {
                 throw ApiException(
@@ -147,8 +151,10 @@ class PostListViewModelUniTest {
             }
         }
 
+        // Fetch user's post list from remote data source by user id
         val flow = repository.getPosts(1)
 
+        // Collect response
         flow.collect { result ->
             when (result) {
                 is Result.Success -> postList.addAll(result.data)

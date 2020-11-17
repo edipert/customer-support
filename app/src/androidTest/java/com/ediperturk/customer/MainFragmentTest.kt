@@ -42,13 +42,6 @@ class MainFragmentTest {
 
         onView(withId(R.id.usersRecyclerView)).check(RecyclerViewItemCountAssertion(10))
 
-        /*onView(withId(R.id.usersRecyclerView)).perform(
-            RecyclerViewActions.scrollToPosition<UserListAdapter.UserViewHolder>(
-                10
-            )
-        )*/
-
-
         Thread.sleep(2000)
 
         onView(withId(R.id.usersRecyclerView)).perform(

@@ -12,6 +12,7 @@ class ConnectionInterceptor(
 ) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
+        // Check internet connection before request
         if (!connectivity.isConnected()) {
             throw NoConnectivityException(
                 resources.getDefaultNetworkExceptionTitle(),

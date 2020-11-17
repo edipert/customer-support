@@ -16,11 +16,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
 
+        // Observe destination change
         findNavController().addOnDestinationChangedListener { _, destination, arguments ->
             backButton.visibility =
                 if (destination.id != R.id.mainFragment && destination.navigatorName == "screen") View.VISIBLE
                 else View.GONE
 
+            // Set app bar title if there is a title variable in arguments
             val title = arguments?.getString("title")
 
             if (destination.navigatorName == "screen") {
@@ -38,6 +40,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
+        // Check is first fragment in fragment manager
+        // iIf it first finish activity
         if (!findNavController().popBackStack()) {
             super.onBackPressed()
         }

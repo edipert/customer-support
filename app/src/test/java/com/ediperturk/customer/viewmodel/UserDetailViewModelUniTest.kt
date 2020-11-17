@@ -87,6 +87,7 @@ class UserDetailViewModelUniTest {
             "Exception should be null!"
         )
 
+        // Mock user service getUser request with local json data
         userService.stub {
             onBlocking { getUser(1) } doReturn Response.success(
                 Json.decodeFromString<List<User>>(
@@ -95,8 +96,10 @@ class UserDetailViewModelUniTest {
             )
         }
 
+        // Fetch user from remote data source by user id
         val flow = repository.getUser(1)
 
+        // Collect response
         flow.collect { result ->
             when (result) {
                 is Result.Success -> user = result.data
@@ -130,6 +133,7 @@ class UserDetailViewModelUniTest {
             "Exception should be null!"
         )
 
+        // Mock user service getUser request with ApiException
         userService.stub {
             onBlocking { getUser(1) } doAnswer {
                 throw ApiException(
@@ -139,8 +143,10 @@ class UserDetailViewModelUniTest {
             }
         }
 
+        // Fetch user from remote data source by user id
         val flow = repository.getUser(1)
 
+        // Collect response
         flow.collect { result ->
             when (result) {
                 is Result.Success -> user = result.data

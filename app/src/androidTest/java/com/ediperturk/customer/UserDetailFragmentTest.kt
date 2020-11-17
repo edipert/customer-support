@@ -2,13 +2,13 @@ package com.ediperturk.customer
 
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.MediumTest
 import com.ediperturk.customer.api.local.UserDao
 import com.ediperturk.customer.ui.userdetail.UserDetailFragment
 import com.ediperturk.customer.ui.userdetail.UserDetailFragmentArgs
-import com.ediperturk.customer.util.RecyclerViewItemCountAssertion
 import com.ediperturk.customer.util.Utils
 import com.ediperturk.customer.util.launchFragmentInHiltContainer
 import dagger.hilt.android.testing.HiltAndroidRule
@@ -36,6 +36,7 @@ class UserDetailFragmentTest {
     fun init() {
         hiltRule.inject()
 
+        // Insert user list from json
         userDao.insertUsersForTest(
             Json.decodeFromString(
                 Utils.getJsonFromAssets("users.json")

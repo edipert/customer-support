@@ -36,6 +36,7 @@ class PostListFragmentTest {
     fun init() {
         hiltRule.inject()
 
+        // Insert user list from json
         userDao.insertUsersForTest(
             Json.decodeFromString(
                 Utils.getJsonFromAssets("users.json")

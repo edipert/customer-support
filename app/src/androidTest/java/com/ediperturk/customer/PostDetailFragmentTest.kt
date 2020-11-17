@@ -36,12 +36,14 @@ class PostDetailFragmentTest {
     fun init() {
         hiltRule.inject()
 
+        // Insert user list from json
         userDao.insertUsersForTest(
             Json.decodeFromString(
                 Utils.getJsonFromAssets("users.json")
             )
         )
 
+        // Insert post list from json
         userDao.insertPostsForTest(
             Json.decodeFromString(
                 Utils.getJsonFromAssets("posts.json")
